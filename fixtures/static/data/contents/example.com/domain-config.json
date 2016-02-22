@@ -1,0 +1,14 @@
+{
+	"config": {
+		"title": "This is an example",
+		"description": "This is my example description",
+		"keywords": "odania portal,example",
+		"languages": [
+			"de",
+			"en"
+		],
+		"language_selector": "prefix",
+		"default_subdomain": "www",
+		"layout": "simple"
+	}
+}

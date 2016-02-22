@@ -1,0 +1,27 @@
+{
+	"plugin-config": {
+		"name": "static-content-test",
+		"default": true,
+		"author": [
+			"Mike Petersen <mike@odania-it.com>"
+		],
+		"url": "http://www.odania.com"
+	},
+	"config": {
+		"author": "Mike Petersen Odania IT",
+		"url": "http://www.odania.com",
+		"layout": "simple"
+	},
+	"domains": {
+		"_general": {
+			"config": {
+			},
+			"redirects": {
+				"odania.de$": "www.odania.com/de"
+			},
+			"default_subdomains": {
+				"_general": "www"
+			}
+		}
+	}
+}

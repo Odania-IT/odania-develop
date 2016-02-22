@@ -1,0 +1,49 @@
+odaniastatic:
+  image: odaniait/odania-static
+  ports:
+    - "8081:80"
+  links:
+    - consul
+  volumes:
+    - ./fixtures/static:/srv/static
+  tty: true
+  stdin_open: true
+varnish:
+  image: odaniait/odania-varnish
+  ports:
+    - "8080:80"
+  links:
+    - mailcatcher
+    - consul
+  environment:
+    ENVIRONMENT: development
+  tty: true
+  stdin_open: true
+core:
+  image: odaniait/odania-core
+  ports:
+    - "9292:9292"
+    - "8082:80"
+  links:
+    - mongo
+    - mailcatcher
+    - consul
+  volumes:
+    - ./fixtures/static/data:/srv/static
+    - ./fixtures/static/config:/srv/config
+  environment:
+    ENVIRONMENT: development
+  tty: true
+  stdin_open: true
+mailcatcher:
+  extends:
+    file: docker-compose.d/base.yml
+    service: mailcatcher
+consul:
+  extends:
+    file: docker-compose.d/base.yml
+    service: consul
+mongo:
+  extends:
+    file: docker-compose.d/base.yml
+    service: mongo
