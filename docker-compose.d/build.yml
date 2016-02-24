@@ -1,7 +1,7 @@
 version: '2'
 services:
   odaniastatic:
-    image: odaniait/odania-static
+    build: git/odania-static
     ports:
       - "8081:80"
     links:
@@ -11,7 +11,7 @@ services:
     tty: true
     stdin_open: true
   varnish:
-    image: odaniait/odania-varnish
+    build: git/odania-varnish
     ports:
       - "8080:80"
     links:
@@ -22,7 +22,7 @@ services:
     tty: true
     stdin_open: true
   core:
-    image: odaniait/odania-core
+    build: git/odania-core
     ports:
       - "9292:9292"
       - "8082:80"

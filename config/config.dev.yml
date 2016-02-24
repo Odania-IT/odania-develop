@@ -1,0 +1,5 @@
+repos:
+   odania-gem: git@github.com:Odania-IT/odania-gem.git
+   odania-core: git@github.com:Odania-IT/odania-core.git
+   odania-varnish: git@github.com:Odania-IT/odania-varnish.git
+   odania-static: git@github.com:Odania-IT/odania-static.git

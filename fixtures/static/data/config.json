@@ -17,7 +17,8 @@
 			"config": {
 			},
 			"redirects": {
-				"odania.de$": "www.odania.com/de"
+				"odania.de$": "www.odania.com/de",
+				"lvh.me$": "www.lvh.me"
 			},
 			"default_subdomains": {
 				"_general": "www"

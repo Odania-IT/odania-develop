@@ -1,15 +1,13 @@
-mailcatcher:
-  image: odaniait/mailcatcher-docker:latest
-  ports:
-    - "2525:2525"
-    - "1080:1080"
-consul:
-  image: odaniait/docker-consul:latest
-  environment:
-    BOOTSTRAP_NODE: "true"
-  tty: true
-  stdin_open: true
-mongo:
-  image: mongo:3.2
-  tty: true
-  stdin_open: true
+version: '2'
+services:
+  mailcatcher:
+    image: odaniait/mailcatcher-docker:latest
+    ports:
+      - "2525:2525"
+      - "1080:1080"
+  consul:
+    image: odaniait/docker-consul:latest
+    environment:
+      BOOTSTRAP_NODE: "true"
+    tty: true
+    stdin_open: true

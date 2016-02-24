@@ -1,2 +1,6 @@
 # Do not add the symlink
 docker-compose.yml
+config/config.yml
+
+# Ignore checked out repositories
+git
