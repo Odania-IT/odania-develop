@@ -1,0 +1,8 @@
+{
+	"name": "simple",
+	"styles": {
+		"_general": {
+			"entry_point": "direct/application.html"
+		}
+	}
+}

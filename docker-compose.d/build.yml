@@ -6,8 +6,11 @@ services:
       - "8081:80"
     links:
       - consul
+    environment:
+      - CONSUL_ADDR=http://consul:8500
     volumes:
       - ./fixtures/static:/srv/static
+      - ./git/odania-static:/srv/odania
     tty: true
     stdin_open: true
   varnish:
@@ -19,6 +22,8 @@ services:
       - consul
     environment:
       ENVIRONMENT: development
+    volumes:
+      - ./git/odania-varnish:/srv/odania
     tty: true
     stdin_open: true
   core:
@@ -29,13 +34,12 @@ services:
     links:
       - mailcatcher
       - consul
-    depends_on:
-      - odaniastatic
-    volumes:
-      - ./fixtures/static/data:/srv/static
-      - ./fixtures/static/config:/srv/config
     environment:
-      ENVIRONMENT: development
+      - CONSUL_ADDR=http://consul:8500
+      - ENVIRONMENT=development
+    volumes:
+      - ./fixtures/core/config:/srv/config
+      - ./git/odania-core:/srv/odania
     tty: true
     stdin_open: true
   mailcatcher:

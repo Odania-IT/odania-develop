@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title><%= config.get('title') %></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="Author" content="<%= config.get('author') %>">
+	<meta name="Keywords" content="<%= config.get('keywords') %>">
+	<meta name="Description" content="<%= config.get('description') %>">
+	<meta http-equiv="content-language" content="<%= config.get('languages') %>">
+	<meta name="robots" content="follow, all"/>
+	<link rel="shortcut icon" href="<%= asset.get('favicon.ico') %>"/>
+	<style type="text/css">
+		a:link {
+			text-decoration: none
+		}
+
+		a:active {
+			text-decoration: none
+		}
+
+		a:hover {
+			text-decoration: none
+		}
+
+		a:visited {
+			text-decoration: none
+		}
+	</style>
+</head>
+
+<body bgcolor="#003366" text="#000000" vlink="#660000" link="#660000" alink="#660000">
+<br/>
+
+<p><%= page.get('content') %></p>
+
+<div>
+	<%= page.get('footer') %>
+	powered by Odania Portal
+</div>
+
+<p><%= page.get('tracking') %></p>
+</body>
+</html>

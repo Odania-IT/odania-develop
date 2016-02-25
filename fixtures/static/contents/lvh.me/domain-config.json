@@ -10,5 +10,8 @@
 		"language_selector": "prefix",
 		"default_subdomain": "www",
 		"layout": "simple"
+	},
+	"redirects": {
+		"^/$": "/detect_language"
 	}
 }
