@@ -13,7 +13,22 @@ class Docker < Thor
 
 			directory = File.join $git_folder, name
 			FileUtils.cp gem_file, directory
-			`docker-compose run #{name} gem install odania-${VERSION}.gem`
 		end
+
+		service_names = docker_compose_config
+		service_names.each do |service|
+			next if %w(mailcatcher consul).include? service
+
+			puts "docker-compose run #{service} gem install odania-#{Odania::VERSION}.gem"
+			`docker-compose run #{service} gem install odania-#{Odania::VERSION}.gem`
+		end
+	end
+
+	private
+
+	def docker_compose_config
+		yaml_config = YAML.load_file File.join(BASE_DIR, 'docker-compose.yml')
+		service_config = yaml_config['services']
+		service_config.keys
 	end
 end
