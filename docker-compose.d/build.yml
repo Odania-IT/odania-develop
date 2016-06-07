@@ -50,3 +50,15 @@ services:
     extends:
       file: docker-compose.d/base.yml
       service: consul
+  redis:
+    extends:
+      file: docker-compose.d/base.yml
+      service: redis
+  mongo:
+    extends:
+      file: docker-compose.d/base.yml
+      service: mongo
+  elasticsearch:
+    extends:
+      file: docker-compose.d/base.yml
+      service: elasticsearch

@@ -10,7 +10,7 @@ cd $ODANIA_GEM_FOLDER
 rake build
 cd ..
 
-echo "Core & HAProxy Internal"
+echo "Odania Core"
 cp $ODANIA_GEM_FOLDER_NAME/pkg/odania-${VERSION}.gem odania-core
 docker exec -ti odaniadevelop_core_1 gem install odania-${VERSION}.gem
 docker exec -ti odaniadevelop_core_1 bundle install
@@ -24,3 +24,8 @@ echo "Odania Static"
 cp $ODANIA_GEM_FOLDER_NAME/pkg/odania-${VERSION}.gem odania-static
 docker exec -ti odaniadevelop_odaniastatic_1 gem install odania-${VERSION}.gem
 docker exec -ti odaniadevelop_odaniastatic_1 bundle install
+
+echo "Odania Admin"
+cp $ODANIA_GEM_FOLDER_NAME/pkg/odania-${VERSION}.gem odania-admin
+docker exec -ti odaniadevelop_admin_1 gem install odania-${VERSION}.gem
+docker exec -ti odaniadevelop_admin_1 bundle install

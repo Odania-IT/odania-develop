@@ -11,3 +11,20 @@ services:
       BOOTSTRAP_NODE: "true"
     tty: true
     stdin_open: true
+  redis:
+    image: redis:alpine
+    tty: true
+    stdin_open: true
+  mongo:
+    image: mongo
+    tty: true
+    stdin_open: true
+    ports:
+      - "6379:6379"
+  elasticsearch:
+    image: elasticsearch:2.3
+    tty: true
+    stdin_open: true
+    ports:
+      - "9200:9200"
+      - "9300:9300"
